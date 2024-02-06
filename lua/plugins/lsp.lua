@@ -26,7 +26,7 @@ return {
             lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
-            lspconfig.rust_analyser.setup({ capabilities = capabilities })
+            lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 
             vim.keymap.set("n", "ch", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "cd", vim.lsp.buf.definition, {})
