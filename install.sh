@@ -8,7 +8,6 @@ if [ -d "$nvimConf" ]; then
     if [[ "$backChoice" == "n" || "$backChoice" == "N" ]]; then
         rm -rf "$HOME"/.config/nvim
         echo "Your existing neovim config has been deleted!"
-        exit
     else
         saveDir=$HOME/.config/nvim-back/
         mv "$nvimConf" "$saveDir"
