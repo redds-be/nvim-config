@@ -13,7 +13,7 @@ return {
         },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls", "pylsp", "rust_analyzer" },
+                ensure_installed = { "lua_ls", "gopls", "pylsp", "rust_analyzer", "bashls", "powershell_es" },
             })
         end,
     },
@@ -27,11 +27,23 @@ return {
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
             lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+            lspconfig.bashls.setup({ capabilities = capabilities })
+            lspconfig.powershell_es.setup({ capabilities = capabilities })
 
             vim.keymap.set("n", "ch", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "cd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "cr", vim.lsp.buf.references, {})
             vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
+        end,
+    },
+    {
+        "ThePrimeagen/refactoring.nvim",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+          require("refactoring").setup()
         end,
     },
 }

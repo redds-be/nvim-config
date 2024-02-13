@@ -19,6 +19,6 @@ return {
 			},
 		})
 		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>")
-		vim.cmd(":Neotree filesystem reveal left") -- launch at startup
+		--vim.cmd(":Neotree filesystem reveal left") -- launch at startup
 	end,
 }

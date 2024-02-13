@@ -13,6 +13,8 @@ return {
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.diagnostics.pylint,
+                --null_ls.builtins.diagnostics.shellcheck,
+                null_ls.builtins.formatting.shellharden,
 				null_ls.builtins.formatting.rustfmt.with({
 					extra_args = function(params)
 						local Path = require("plenary.path")
