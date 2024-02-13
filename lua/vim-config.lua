@@ -2,6 +2,9 @@
 vim.g.mapleader = " "
 vim.cmd("set number relativenumber")
 
+-- Cursor
+vim.cmd("set cursorline")
+
 -- Use ctrl-<arrows> to select the active split
 vim.cmd("nmap <silent> <c-Up> :wincmd k<CR>")
 vim.cmd("nmap <silent> <c-Down> :wincmd j<CR>")
