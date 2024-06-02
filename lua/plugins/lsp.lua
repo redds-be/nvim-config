@@ -13,7 +13,7 @@ return {
         },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls", "pylsp", "rust_analyzer", "bashls", "powershell_es" },
+                ensure_installed = { "lua_ls", "gopls", "pylsp", "bashls", "powershell_es", "phpactor" },
             })
         end,
     },
@@ -26,9 +26,8 @@ return {
             lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.pylsp.setup({ capabilities = capabilities })
-            lspconfig.rust_analyzer.setup({ capabilities = capabilities })
             lspconfig.bashls.setup({ capabilities = capabilities })
-            lspconfig.powershell_es.setup({ capabilities = capabilities })
+            lspconfig.phpactor.setup({ capabilities = capabilities, root_dir = lspconfig.util.root_pattern('index.php') })
 
             vim.keymap.set("n", "ch", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "cd", vim.lsp.buf.definition, {})
